@@ -12,7 +12,8 @@ import 'angular-ui-router';
 const appModule = angular
     .module('myApp', [
         'ui.router',
-        'app.components.testComponent'
+        'app.components.testComponent',
+        'app.components.pigLatinConverterComponent'
     ]);
 
 export default appModule;
