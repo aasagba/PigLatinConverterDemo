@@ -16,23 +16,26 @@ class pigLatinConverterController {
     }
 
     doConversion () {
-        let words = this.checkInput();
-
+        let words = this.input.split(' ');
         // loop through array of words and check 1st letters
+        this.processInput(words);
+        // join converted array into string for UI
+        this.handleConversion();
+    }
+
+    handleConversion () {
+        this.output = this.out.join(" ");
+        this.addToHistory();
+    }
+
+    processInput (words) {
+        // get words and split into array of words
         words.forEach((word) => {
             let letter = word.slice(0,1).toLowerCase();
             // check pattern
             let pattern = this.checkLetterPattern(letter);
             this.convertToPigLatin(pattern, word, letter);
         });
-
-        console.log('output: ', this.out);
-        this.output = this.out.join(" ");
-    }
-
-    checkInput () {
-        // get words and split into array of words
-        return this.input.split(' ');
     }
 
     checkLetterPattern (letter) {
@@ -42,26 +45,29 @@ class pigLatinConverterController {
 
     doVowelConversion(word) {
         // For words that begin with vowel sounds, one just adds 'way' to the end
+        console.log(`vowel conversion for word ${word}`);
         const vowelSuffix = 'say';
-        console.log(`vowel converstion for word ${word}`);
-        let converstion = word + vowelSuffix;
-        this.out.push(converstion);
+        let conversion = word + vowelSuffix;
+        this.out.push(conversion);
     }
 
     doConsonantConversion(word, letter) {
         // all letters before the initial vowel are placed at the end of the word sequence.
-        console.log(`consonant converstion for word ${word}`);
+        console.log(`consonant conversion for word ${word}`);
         const consonantSuffix = 'ay';
-        let converstion = word.slice(1) + letter + consonantSuffix;
-        this.out.push(converstion);
+        let conversion = word.slice(1) + letter + consonantSuffix;
+        this.out.push(conversion);
     }
 
     convertToPigLatin (pattern, word, letter) {
         pattern === 'vowel' ? this.doVowelConversion(word) : this.doConsonantConversion(word, letter);
     }
 
-    storeInputHistory () {
-
+    addToHistory () {
+        this.history.unshift(this.output);
+        console.log('history: ' + this.history);
+        this.out.length = 0;
+        console.log('output: ', this.out);
     }
 }
 

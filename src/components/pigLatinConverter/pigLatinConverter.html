@@ -1,14 +1,25 @@
 <div class="pig-latin-converter col-lg-12">
     <h1>Pig Latin Converter Tool</h1>
 
-    <form class="row converterForm">
-        <div style="" class="col-lg-6 col-centered">
-            <div class="col-lg-12">
-                <button type="button" class="convert-button btn btn-primary" ng-click="$ctrl.doConversion()" uib-btn-checkbox>Convert</button>
+    <form class="converterForm">
+        <div class="row">
+            <div class="col-lg-6 col-centered">
+                <div class="col-lg-12">
+                    <button type="button" class="convert-button btn btn-primary" ng-click="$ctrl.doConversion()" uib-btn-checkbox>Convert</button>
+                </div>
+                <div class="col-lg-12">
+                    <input type="text" ng-model="$ctrl.input" class="input form-control">
+                    <input type="text" ng-model="$ctrl.output" class="output form-control">
+                </div>
             </div>
-            <div class="col-lg-12">
-                <input type="text" ng-model="$ctrl.input" class="input form-control">
-                <input type="text" ng-model="$ctrl.output" class="output form-control">
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-centered">
+                <h2>History:</h2>
+                <ul>
+                    <li ng-repeat="item in $ctrl.history">{{ $index + 1}}. {{item}}</li>
+                </ul>
             </div>
         </div>
     </form>
