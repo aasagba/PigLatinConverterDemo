@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 import pigLatinConverter from './pigLatinConverter';
 
-describe('Pig Latin convertor: ', () => {
+describe('Pig Latin converter: ', () => {
     let $ctrl,
         $scope,
         $componentController,
@@ -23,9 +23,6 @@ describe('Pig Latin convertor: ', () => {
 
     beforeEach(() => {
         $ctrl.doConversion();
-
-        spyOn($ctrl, 'doVowelConversion');
-        spyOn($ctrl, 'doConsonantConversion');
     });
 
     it('it should accept words', () => {

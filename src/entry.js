@@ -13,7 +13,6 @@ import 'angular-ui-bootstrap';
 const appModule = angular
     .module('myApp', [
         'ui.router',
-        'app.components.testComponent',
         'app.components.pigLatinConverterComponent'
     ]);
 
