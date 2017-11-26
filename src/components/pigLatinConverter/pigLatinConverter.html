@@ -4,11 +4,11 @@
     <form class="row converterForm">
         <div style="" class="col-lg-6 col-centered">
             <div class="col-lg-12">
-                <button type="button" class="convert-button btn btn-primary" uib-btn-checkbox>Convert</button>
+                <button type="button" class="convert-button btn btn-primary" ng-click="$ctrl.doConversion()" uib-btn-checkbox>Convert</button>
             </div>
             <div class="col-lg-12">
-                <input type="text" ng-model="format" class="input form-control">
-                <input type="text" ng-model="format" class="output form-control">
+                <input type="text" ng-model="$ctrl.input" class="input form-control">
+                <input type="text" ng-model="$ctrl.output" class="output form-control">
             </div>
         </div>
     </form>
