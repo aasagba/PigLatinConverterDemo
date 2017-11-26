@@ -8,6 +8,7 @@ import './components';
 import 'jquery';
 import 'angular';
 import 'angular-ui-router';
+import 'angular-ui-bootstrap';
 
 const appModule = angular
     .module('myApp', [

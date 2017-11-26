@@ -80,7 +80,8 @@ module.exports = function (grunt) {
                     devtool: 'cheap-eval-sourcemap'
                 }
             }
-        }
+        },
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -89,6 +90,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-webpack');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('webpack-dev-server');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('webpack', ['html2js', 'jshint', 'webpack-dev-server']);
 };

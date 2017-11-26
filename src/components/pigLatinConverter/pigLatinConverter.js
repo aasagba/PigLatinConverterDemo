@@ -8,6 +8,26 @@ class pigLatinConverterController {
 
     $onInit() {
         this.title = 'test title';
+        this.input = '';
+        this.words = [];
+        this.history = [];
+        this.vowels = ['a', 'e', 'i', 'o', 'u'];
+    }
+
+    getInput (input) {
+
+    }
+
+    checkLetterPattern () {
+
+    }
+
+    convertToPigLatin () {
+
+    }
+
+    storeInputHistory () {
+
     }
 }
 

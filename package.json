@@ -6,11 +6,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
     "devBuild": "npm run webpack",
-    "dev": "set NODE_ENV=development && grunt webpack"
+    "dev": "set NODE_ENV=development && grunt webpack",
+    "tests": "karma start"
   },
   "author": "aasagba",
   "license": "ISC",
   "devDependencies": {
+    "angular-ui-bootstrap": "^2.5.6",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -23,6 +25,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-html2js": "^0.5.1",
+    "grunt-karma": "^2.0.0",
     "grunt-webpack": "^3.0.2",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
