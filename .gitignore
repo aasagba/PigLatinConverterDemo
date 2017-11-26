@@ -1,0 +1,12 @@
+# App
+src/components/**/*.html.js
+
+.git
+.idea
+
+# NPM
+node_modules
+npm-debug.log
+
+# Build files
+build/
