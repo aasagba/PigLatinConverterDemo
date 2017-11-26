@@ -16,7 +16,8 @@ class pigLatinConverterController {
     }
 
     doConversion () {
-        let words = this.input.split(' ');
+        console.log("inputtt: ", this.input);
+        var words = this.input.split(' ');
         // loop through array of words and check 1st letters
         this.processInput(words);
         // join converted array into string for UI
@@ -25,10 +26,12 @@ class pigLatinConverterController {
 
     handleConversion () {
         this.output = this.out.join(" ");
+        console.log('output..: ', this.output);
         this.addToHistory();
     }
 
     processInput (words) {
+        console.log('weords: ', words);
         // get words and split into array of words
         words.forEach((word) => {
             let letter = word.slice(0,1).toLowerCase();
@@ -57,6 +60,7 @@ class pigLatinConverterController {
         const consonantSuffix = 'ay';
         let conversion = word.slice(1) + letter + consonantSuffix;
         this.out.push(conversion);
+        console.log('out: ', this.out);
     }
 
     convertToPigLatin (pattern, word, letter) {
